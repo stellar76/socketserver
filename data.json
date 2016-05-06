@@ -1,0 +1,6 @@
+[{ "id": 1, "gender": "Female", "first_name": "Kim", "last_name": "Gardner", "email": "kgardner0@goodreads.com", "ip_address": "108.238.73.65" },
+    { "id": 2, "gender": "Female", "first_name": "Laura", "last_name": "Richardson", "email": "prichardson1@forbes.com", "ip_address": "120.134.12.111" },
+    { "id": 3, "gender": "Male", "first_name": "Gerald", "last_name": "Gunner", "email": "gfisher2@sogou.com", "ip_address": "62.137.168.36" },
+    { "id": 4, "gender": "Male", "first_name": "Harold", "last_name": "Spencer", "email": "jspencer3@psu.edu", "ip_address": "64.88.40.111" },
+    { "id": 5, "gender": "Male", "first_name": "Dave", "last_name": "Matthews", "email": "cmatthews4@cpanel.net", "ip_address": "98.52.139.229" }
+]
