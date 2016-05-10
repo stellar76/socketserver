@@ -9,9 +9,9 @@
   },
   "dependencies": {
     "express": "",
-    "fs": "",
+    "chokidar": "",
     "jsonfile": "",
-    "http": "" 
+    "http": ""
   },
   "author": "Jody Christian",
   "license": "ISC"
