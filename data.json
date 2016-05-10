@@ -1,6 +1,43 @@
-[{ "id": 1, "gender": "Female", "first_name": "Kim", "last_name": "Gardner", "email": "kgardner0@goodreads.com", "ip_address": "108.238.73.65" },
-    { "id": 2, "gender": "Female", "first_name": "Laura", "last_name": "Richardson", "email": "prichardson1@forbes.com", "ip_address": "120.134.12.111" },
-    { "id": 3, "gender": "Male", "first_name": "Gerald", "last_name": "Gunner", "email": "gfisher2@sogou.com", "ip_address": "62.137.168.36" },
-    { "id": 4, "gender": "Male", "first_name": "Harold", "last_name": "Spencer", "email": "jspencer3@psu.edu", "ip_address": "64.88.40.111" },
-    { "id": 5, "gender": "Male", "first_name": "Dave", "last_name": "Matthews", "email": "cmatthews4@cpanel.net", "ip_address": "98.52.139.229" }
-]
+[{
+    "Id": 896,
+    "Artist": "Phil Wickham",
+    "Title": "At Your  Name",
+    "Duration": 221000,
+    "DateCreated": "\/Date(1462890502187)\/",
+    "Playing": true
+}, {
+    "Id": 895,
+    "Artist": "Francesca Battistelli",
+    "Title": "Holy Spirit",
+    "Duration": 263100,
+    "DateCreated": "\/Date(1462890130567)\/",
+    "Playing": false
+}, {
+    "Id": 894,
+    "Artist": "Tenth Avenue North",
+    "Title": "Strong Enough To Save",
+    "Duration": 202400,
+    "DateCreated": "\/Date(1462889691380)\/",
+    "Playing": false
+}, {
+    "Id": 893,
+    "Artist": "Jeremy Riddle",
+    "Title": "Sweetly Broken",
+    "Duration": 204300,
+    "DateCreated": "\/Date(1462889479410)\/",
+    "Playing": false
+}, {
+    "Id": 892,
+    "Artist": "Phillips, Craig, \u0026 Dean",
+    "Title": "Revelation Song (Radio)",
+    "Duration": 259200,
+    "DateCreated": "\/Date(1462889214813)\/",
+    "Playing": false
+}, {
+    "Id": 891,
+    "Artist": "Casting Crowns",
+    "Title": "Who Am I",
+    "Duration": 249000,
+    "DateCreated": "\/Date(1462888621040)\/",
+    "Playing": false
+}]

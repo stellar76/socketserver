@@ -1,35 +1,58 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <title>Socket.IO Nerd Stuff</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js"></script>
-      <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
-    <![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>AFR Now Playing</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.6/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://localhost:3030');
+
+        socket.on('nowPlaying', function(songs) {
+            var not = document.getElementById("notPlaying");
+            var now = document.getElementById("nowPlaying");
+            var lastSongs = document.getElementById("lastSongs");
+
+            clearElements(not, now, lastSongs);
+
+            for (var i = 0; i < songs.length; i++) {
+                if (songs[i].Playing) {
+                    var created = new Date(parseInt(songs[i].DateCreated.substr(6)));
+                    now.innerHTML = songs[i].Title + ' by ' + songs[i].Artist + "<br/>Duration: " + msToTime(songs[i].Duration) + "<br/>Started: " + created;
+                } else {
+                    var song = document.createElement("li");
+                    song.appendChild(document.createTextNode(songs[i].Title + " by " + songs[i].Artist));
+                    not.appendChild(song);
+                }
+            }
+
+            function clearElements(not, now, lastSongs) {
+                not.innerHTML = "";
+                now.innerHTML = "";
+                lastSongs.style.display = 'block';
+            }
+
+            function msToTime(s) {
+                function addZ(n) {
+                    return (n < 10 ? '0' : '') + n;
+                }
+                var ms = s % 1000;
+                s = (s - ms) / 1000;
+                var secs = s % 60;
+                s = (s - secs) / 60;
+                var mins = s % 60;
+                return addZ(mins) + ':' + addZ(secs);
+            }
+        });
+    </script>
 </head>
 
 <body>
-    <h1>Socket.IO Nerd Stuff</h1>
-    <div class="well" id="data">
+    <h1 id="nowPlaying"></h1>
+    <div style="margin-top:25px;">
+        <h3 id="lastSongs" style="display: none;">Last Songs Played:</h3>
+        <ul id="notPlaying"></ul>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.6/socket.io.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script>
-    var socket = io.connect('http://10.1.1.23:3030');
-    socket.on('notification', function(data) {
-        console.log("I thought it was a dream.  I used to read Word Up Magazine.");
-        var nerdData = data;
-        i = 0, len = nerdData.length;
-        for (; i < len; i++) {
-            console.log(nerdData[i].first_name + '_' + nerdData[i].last_name);
-        }
-    });
-    </script>
 </body>
 
 </html>
